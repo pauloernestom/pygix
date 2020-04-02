@@ -124,9 +124,9 @@ def get_axis_label(label=None):
         quantity = quantity.replace(" ", "\ ")
         axis_label += '$\mathrm{%s}' % quantity
     elif quantity in ['alpha', 'beta', 'gamma', 'chi', 'psi', 'theta']:
-        axis_label += r'$\%s' % quantity
+        axis_label += r'$%s' % quantity
     else:
-        axis_label += r'$\textit{%s}' % quantity
+        axis_label += r'$%s' % quantity
     if quant_sub:
         axis_label += r'_{%s}' % quant_sub
     axis_label += r'$'
@@ -386,7 +386,7 @@ def implot(data, x=None, y=None, mode=None,
         cax = divider.append_axes("right", size="5%", pad=0.05)
         plt.colorbar(im, cax=cax)
 
-    ax.set_axis_bgcolor(colormap(0))
+    ax.set_facecolor(colormap(0))
 
     if tight_layout:
         plt.tight_layout()
